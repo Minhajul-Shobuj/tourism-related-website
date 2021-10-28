@@ -12,11 +12,11 @@ const Home = () => {
                 {
                     service.map(element =>
                         <div key={element.name} className="col">
-                            <div className="card h-100">
+                            <div className="cards card h-100">
                                 <img src={element.img} className="card-img-top" alt="..." />
                                 <div className="card-body">
                                     <h5 className="card-title">{element.name}</h5>
-                                    <p className="card-text">This is a wider card with supporting text below as a natural lead-in to additional content.This content is a little bit longer.</p>
+                                    <p className="card-text">{element.optional}</p>
                                 </div>
                                 <div className="card-footer">
                                     <NavLink to="/register">
