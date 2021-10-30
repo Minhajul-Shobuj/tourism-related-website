@@ -45,7 +45,8 @@ const Register = () => {
                     </div>
                 </div>
             </div>
-            <div className="col-md-12 col-lg-6" >
+            <div className="col-md-12 col-lg-6 mt-5" >
+                <h3>Place your order--</h3>
                 <form className="orderForm" onSubmit={handleSubmit(onSubmit)}>
                     Package: <input className="ms-3 mt-3" {...register("packageName")} placeholder="please,enter this package name" />
                     <br />
