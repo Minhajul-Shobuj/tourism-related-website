@@ -5,16 +5,19 @@ const ManageOrders = () => {
     const [myOrders, setmyOrders] = useMyOrders();
     //for deleting orders;
     const handleDelete = (id) => {
-        const url = `https://desolate-spire-86561.herokuapp.com/users/${id}`
-        fetch(url, {
-            method: 'DELETE'
-        }).then(res => res.json()).then(data => {
-            if (data.deletedCount) {
-                alert('successfully removed');
-                const remaining = myOrders.filter(order => order._id !== id);
-                setmyOrders(remaining);
-            }
-        });
+        const proceed = window.confirm('Are you sure?');
+        if (proceed) {
+            const url = `https://desolate-spire-86561.herokuapp.com/users/${id}`
+            fetch(url, {
+                method: 'DELETE'
+            }).then(res => res.json()).then(data => {
+                if (data.deletedCount) {
+                    alert('successfully removed');
+                    const remaining = myOrders.filter(order => order._id !== id);
+                    setmyOrders(remaining);
+                }
+            });
+        }
     };
     return (
         <div>

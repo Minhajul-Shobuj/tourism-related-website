@@ -20,6 +20,10 @@ const Header = () => {
                             <Nav.Link as={NavLink} to="/services">Packages</Nav.Link>
                             <Nav.Link as={NavLink} to="/about">About</Nav.Link>
                             <Nav.Link as={NavLink} to="/orders">My Orders ({myOrders.length})</Nav.Link>
+                            {user.email &&
+                                <Nav.Link as={NavLink} to="/manageOrder">Manage Orders</Nav.Link>}
+                            {user.email &&
+                                <Nav.Link as={NavLink} to="/orders">Suggest A Package</Nav.Link>}
                         </Nav>
                         <Nav>
                             {user.displayName ?
