@@ -10,7 +10,7 @@ const Register = () => {
     const { register, handleSubmit, reset } = useForm();
     const onSubmit = data => {
         console.log(data)
-        axios.post('http://localhost:5000/users', data)
+        axios.post('https://desolate-spire-86561.herokuapp.com/users', data)
             .then(function (res) {
                 console.log(res);
                 if (res.data.insertedId) {

@@ -5,7 +5,7 @@ const ManageOrders = () => {
     const [myOrders, setmyOrders] = useMyOrders();
     //for deleting orders;
     const handleDelete = (id) => {
-        const url = `http://localhost:5000/users/${id}`
+        const url = `https://desolate-spire-86561.herokuapp.com/users/${id}`
         fetch(url, {
             method: 'DELETE'
         }).then(res => res.json()).then(data => {

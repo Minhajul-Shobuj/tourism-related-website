@@ -4,7 +4,7 @@ import { useState } from "react"
 const usePackages = () => {
     const [services, setService] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/packages')
+        fetch('https://desolate-spire-86561.herokuapp.com/packages')
             .then(res => res.json())
             .then(data => setService(data));
     }, []);
