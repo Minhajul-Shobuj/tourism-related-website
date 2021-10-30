@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 import './service.css'
 
 const Service = ({ service }) => {
-    const { img, name, optional } = service;
+    const { img, name, optional, _id } = service;
     return (
         <div>
             <div className="col">
@@ -14,7 +14,7 @@ const Service = ({ service }) => {
                         <p className="card-text">{optional}</p>
                     </div>
                     <div className="card-footer">
-                        <NavLink to="/register">
+                        <NavLink to={`/register/${_id}`}>
                             <button>Book Now</button>
                         </NavLink>
                     </div>

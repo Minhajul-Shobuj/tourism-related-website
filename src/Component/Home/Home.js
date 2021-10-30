@@ -1,9 +1,9 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import useProducts from '../../Hooks/allServices';
+import useServices from '../../Hooks/allServices';
 
 const Home = () => {
-    const [services] = useProducts();
+    const [services] = useServices();
     const service = services.slice(11);
     return (
         <div>
@@ -11,7 +11,7 @@ const Home = () => {
             <div className="row row-cols-1 row-cols-md-3 row-cols-lg-3 g-4">
                 {
                     service.map(element =>
-                        <div key={element.name} className="col">
+                        <div key={element._id} className="col">
                             <div className="cards card h-100">
                                 <img src={element.img} className="card-img-top" alt="..." />
                                 <div className="card-body">

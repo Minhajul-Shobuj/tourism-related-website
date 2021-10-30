@@ -1,14 +1,14 @@
 import { useEffect } from "react";
 import { useState } from "react"
 
-const useProducts = () => {
+const useServices = () => {
     const [services, setService] = useState([]);
     useEffect(() => {
-        fetch('./fakeDb.json')
+        fetch('http://localhost:5000/packages')
             .then(res => res.json())
             .then(data => setService(data));
     }, []);
     return [services, setService];
 }
 
-export default useProducts;
+export default useServices;
