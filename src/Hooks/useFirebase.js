@@ -10,12 +10,7 @@ const useFirebase = () => {
     const [error, setError] = useState({});
     const googleSignIn = () => {
         const auth = getAuth();
-        signInWithPopup(auth, provider)
-            .then((result) => {
-                setUser(result.user);
-            }).catch((error) => {
-                setError(error.message)
-            });
+        return signInWithPopup(auth, provider)
     };
 
     const logOut = () => {
@@ -40,7 +35,7 @@ const useFirebase = () => {
     }, [])
 
     return {
-        googleSignIn, user, error, logOut
+        googleSignIn, user, error, logOut, setUser, setError
     }
 
 };
