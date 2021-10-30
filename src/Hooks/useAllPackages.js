@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useState } from "react"
 
-const useServices = () => {
+const usePackages = () => {
     const [services, setService] = useState([]);
     useEffect(() => {
         fetch('http://localhost:5000/packages')
@@ -11,4 +11,4 @@ const useServices = () => {
     return [services, setService];
 }
 
-export default useServices;
+export default usePackages;

@@ -1,17 +1,9 @@
-import React, { useEffect, useState } from 'react';
-import useAuth from '../../Hooks/useAuth';
+import React from 'react';
 import useMyOrders from '../../Hooks/useMyOrders';
 
 const ManageOrders = () => {
-    const { user } = useAuth();
-    const [orders] = useMyOrders();
-    const [myOrders, setmyOrders] = useState([]);
-    useEffect(() => {
-        const myOrders = orders.filter(order =>
-            order.email === user.email);
-        setmyOrders(myOrders);
-    }, [orders]);
-
+    const [myOrders, setmyOrders] = useMyOrders();
+    //for deleting orders;
     const handleDelete = (id) => {
         const url = `http://localhost:5000/users/${id}`
         fetch(url, {
@@ -22,8 +14,8 @@ const ManageOrders = () => {
                 const remaining = myOrders.filter(order => order._id !== id);
                 setmyOrders(remaining);
             }
-        })
-    }
+        });
+    };
     return (
         <div>
             <h1 className="text-center">Manage Your Orders</h1>

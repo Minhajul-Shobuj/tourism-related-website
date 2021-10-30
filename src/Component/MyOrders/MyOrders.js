@@ -1,17 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { NavLink } from 'react-router-dom';
-import useAuth from '../../Hooks/useAuth';
 import useMyOrders from '../../Hooks/useMyOrders';
 
 const MyOrders = () => {
-    const { user } = useAuth();
-    const [orders] = useMyOrders();
-    const [myOrders, setmyOrders] = useState([]);
-    useEffect(() => {
-        const myOrders = orders.filter(order =>
-            order.email === user.email);
-        setmyOrders(myOrders);
-    }, [orders]);
+    const [myOrders] = useMyOrders();
     return (
         <div>
             <h1 className="text-center">Your Orders</h1>

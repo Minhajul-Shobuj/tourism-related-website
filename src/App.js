@@ -10,7 +10,7 @@ import MyOrders from './Component/MyOrders/MyOrders';
 import NotFound from './Component/NotFound/NotFound';
 import PrivateRoute from './Component/PrivateRoute/PrivateRoute';
 import Register from './Component/Register/Register';
-import Services from './Component/Services/Services';
+import Packages from './Component/Packages/Packages';
 
 function App() {
   return (
@@ -26,7 +26,7 @@ function App() {
               <Home></Home>
             </Route>
             <Route path="/services">
-              <Services></Services>
+              <Packages></Packages>
             </Route>
             <Route path="/about">
               <About></About>

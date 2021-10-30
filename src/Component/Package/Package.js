@@ -1,8 +1,8 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import './service.css'
+import './package.css'
 
-const Service = ({ service }) => {
+const Package = ({ service }) => {
     const { img, name, optional, _id } = service;
     return (
         <div>
@@ -24,4 +24,4 @@ const Service = ({ service }) => {
     );
 };
 
-export default Service;
+export default Package;

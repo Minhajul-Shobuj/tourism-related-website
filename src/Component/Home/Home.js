@@ -1,9 +1,9 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import useServices from '../../Hooks/allServices';
+import usePackages from '../../Hooks/useAllPackages';
 
 const Home = () => {
-    const [services] = useServices();
+    const [services] = usePackages();
     const service = services.slice(11);
     return (
         <div>
