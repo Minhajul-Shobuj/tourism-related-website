@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { NavLink } from 'react-router-dom';
 import useAuth from '../../Hooks/useAuth';
 import useMyOrders from '../../Hooks/useMyOrders';
 
@@ -20,6 +21,8 @@ const MyOrders = () => {
                         myOrders.map(order => <li key={order._id} className="list-group-item">{order?.packageName}</li>)
                     }
                 </ul>
+                <NavLink to="/manageOrder">
+                    <button className=" mt-3 btn btn-danger">Mange your orders</button></NavLink>
             </div>
         </div>
     );

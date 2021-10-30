@@ -5,6 +5,7 @@ import AuthProvider from './Component/context/AuthProvider';
 import Header from './Component/Header/Header';
 import Home from './Component/Home/Home';
 import Login from './Component/Login/Login';
+import ManageOrders from './Component/ManageOrders/ManageOrders';
 import MyOrders from './Component/MyOrders/MyOrders';
 import NotFound from './Component/NotFound/NotFound';
 import PrivateRoute from './Component/PrivateRoute/PrivateRoute';
@@ -35,6 +36,9 @@ function App() {
             </Route>
             <PrivateRoute path="/orders">
               <MyOrders></MyOrders>
+            </PrivateRoute>
+            <PrivateRoute path="/manageOrder">
+              <ManageOrders></ManageOrders>
             </PrivateRoute>
             <PrivateRoute path="/register/:serviceId">
               <Register></Register>
