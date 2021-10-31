@@ -29,7 +29,7 @@ const ManageAllOrders = () => {
             <div className="card d-flex align-items-center justify-content-center mt-5">
                 <ul className="list-group list-group-numbered">
                     {
-                        orders.map(order => <li key={order._id} className="list-group-item">{order?.packageName} <button onClick={() => handleDelete(order._id)} className={`btn ${user.email ? '' : 'disabled'} btn-danger`}>remove</button> </li>)
+                        orders.map(order => <li key={order._id} className="list-group-item">{order?.packageName} <button className="btn btn-warning">pending</button> <button onClick={() => handleDelete(order._id)} className={`btn ${user.email ? '' : 'disabled'} btn-danger`}>remove</button> </li>)
                     }
                 </ul>
                 <NavLink to="/manageOrder">

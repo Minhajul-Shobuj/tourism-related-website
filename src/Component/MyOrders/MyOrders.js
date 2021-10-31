@@ -10,7 +10,7 @@ const MyOrders = () => {
             <div className="card d-flex align-items-center justify-content-center mt-5">
                 <ul className="list-group list-group-numbered">
                     {
-                        myOrders.map(order => <li key={order._id} className="list-group-item">{order?.packageName}</li>)
+                        myOrders.map(order => <li key={order._id} className="list-group-item">{order?.packageName} <button className="btn btn-warning">pending</button></li>)
                     }
                 </ul>
                 <NavLink to="/manageOrder">
