@@ -22,6 +22,8 @@ const PlacePackage = () => {
     return (
         <div>
             <h3>Place your Package--</h3>
+            {!user.email &&
+                <small>**Note: Only admin can manage this page</small>}
             <form className="orderForm" onSubmit={handleSubmit(onSubmit)}>
                 Package-name: <input className="ms-3 mt-3" {...register("name", { required: true, maxLength: 20 })} />
                 <br />
