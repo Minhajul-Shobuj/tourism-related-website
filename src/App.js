@@ -12,6 +12,8 @@ import PrivateRoute from './Component/PrivateRoute/PrivateRoute';
 import Register from './Component/Register/Register';
 import Packages from './Component/Packages/Packages';
 import Footer from './Component/Footer/Footer';
+import ManageAllOrders from './Component/ManageAllOrders/ManageAllOrders';
+import PlacePackage from './PlacePackage/PlacePackage';
 
 function App() {
   return (
@@ -41,6 +43,12 @@ function App() {
             <PrivateRoute path="/manageOrder">
               <ManageOrders></ManageOrders>
             </PrivateRoute>
+            <Route path="/manageAllOrder">
+              <ManageAllOrders></ManageAllOrders>
+            </Route>
+            <Route path="/placePackage">
+              <PlacePackage></PlacePackage>
+            </Route>
             <PrivateRoute path="/register/:serviceId">
               <Register></Register>
             </PrivateRoute>

@@ -9,7 +9,6 @@ import './register.css'
 const Register = () => {
     const { register, handleSubmit, reset } = useForm();
     const onSubmit = data => {
-        console.log(data)
         axios.post('https://desolate-spire-86561.herokuapp.com/users', data)
             .then(function (res) {
                 console.log(res);
