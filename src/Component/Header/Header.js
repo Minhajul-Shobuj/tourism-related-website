@@ -21,8 +21,7 @@ const Header = () => {
                             <Nav.Link as={NavLink} to="/about">About</Nav.Link>
                             <Nav.Link as={NavLink} to="/orders">My Orders ({myOrders.length})</Nav.Link>
                             <Nav.Link as={NavLink} to="manageAllOrder">Manage All Orders</Nav.Link>
-                            {user.email &&
-                                <Nav.Link as={NavLink} to="/placePackage">Suggest A Package</Nav.Link>}
+                            <Nav.Link as={NavLink} to="/placePackage">Suggest A Package</Nav.Link>
                         </Nav>
                         <Nav>
                             {user.displayName ?

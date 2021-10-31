@@ -1,8 +1,10 @@
 import axios from 'axios';
 import React from 'react';
 import { useForm } from 'react-hook-form';
+import useAuth from '../../Hooks/useAuth';
 
 const PlacePackage = () => {
+    const { user } = useAuth();
     const { register, handleSubmit, reset } = useForm();
     const onSubmit = data => {
         const check = window.confirm('Are you a Admin?');
@@ -19,18 +21,20 @@ const PlacePackage = () => {
     };
     return (
         <div>
-            <h3>Place your order--</h3>
+            <h3>Place your Package--</h3>
             <form className="orderForm" onSubmit={handleSubmit(onSubmit)}>
                 Package-name: <input className="ms-3 mt-3" {...register("name", { required: true, maxLength: 20 })} />
                 <br />
-                Img-Link: <input className="ms-3 mt-3" type="text" {...register("img")} />
+                Img-Link: <input className="ms-3 mt-3" type="text" {...register("img", { required: true })} />
                 <br />
                 Some Optional-Service :<input
                     style={{
                         width: '250px', height: '80px'
                     }} className="ms-3 mt-3" type="text" {...register("optional", { required: true })} />
                 <br />
-                <input className="ms-3 mt-3" type="submit" placeholder="Place Order" />
+                {user.email ?
+                    <input className="ms-3 mt-3" type="submit" placeholder="Place Order" /> :
+                    <input className="ms-3 mt-3" type="submit" placeholder="Place Order" disabled />}
             </form>
         </div>
     );

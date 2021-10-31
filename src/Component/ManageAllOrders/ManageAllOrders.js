@@ -29,9 +29,7 @@ const ManageAllOrders = () => {
             <div className="card d-flex align-items-center justify-content-center mt-5">
                 <ul className="list-group list-group-numbered">
                     {
-                        orders.map(order => <li key={order._id} className="list-group-item">{order?.packageName} {user.email ?
-                            <button onClick={() => handleDelete(order._id)} className="btn btn-danger">remove</button> :
-                            <button onClick={() => handleDelete(order._id)} className="btn disabled  btn-danger">remove</button>} </li>)
+                        orders.map(order => <li key={order._id} className="list-group-item">{order?.packageName} <button onClick={() => handleDelete(order._id)} className={`btn ${user.email ? '' : 'disabled'} btn-danger`}>remove</button> </li>)
                     }
                 </ul>
                 <NavLink to="/manageOrder">

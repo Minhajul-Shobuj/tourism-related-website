@@ -13,7 +13,7 @@ import Register from './Component/Register/Register';
 import Packages from './Component/Packages/Packages';
 import Footer from './Component/Footer/Footer';
 import ManageAllOrders from './Component/ManageAllOrders/ManageAllOrders';
-import PlacePackage from './PlacePackage/PlacePackage';
+import PlacePackage from './Component/PlacePackage/PlacePackage';
 
 function App() {
   return (
